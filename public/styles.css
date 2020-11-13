@@ -1,0 +1,82 @@
+:root {
+  --lo-color-primary: #0067ad;
+  --lo-font-body: "Noto Sans JP", sans-serif;
+  --lo-font-header: "Oswald", sans-serif;
+  --lo-field-border: 1px solid var(--lo-color-primary);
+  --lo-field-border-radius: 3px;
+  --lo-grid: 1rem;
+  --lo-grid-2: calc(var(--lo-grid) * 2);
+  --lo-grid-half: calc(var(--lo-grid) * 0.5);
+}
+
+body {
+  font-family: var(--lo-font-body);
+}
+
+.body-container {
+  display: grid;
+  gap: var(--lo-grid);
+  grid-template-areas:
+    "header"
+    "body";
+  justify-content: center;
+}
+
+@media (min-width: 1024px) {
+  .body-container {
+    grid-template-areas: "header body";
+  }
+}
+
+header {
+  grid-area: "header";
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--lo-grid);
+}
+
+header h1 {
+  font-family: var(--lo-font-header);
+  color: var(--lo-color-primary);
+  font-size: 15vh;
+  text-transform: uppercase;
+}
+
+header p {
+  font-size: 2rem;
+}
+
+main {
+  grid-area: "body";
+  padding: var(--lo-grid);
+  max-width: 700px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: var(--lo-grid-2);
+}
+
+input,
+textarea {
+  width: 100%;
+  margin-top: var(--lo-grid-half);
+  border: var(--lo-field-border);
+  border-radius: var(--lo-field-border-radius);
+}
+
+select {
+  border: var(--lo-field-border);
+  border-radius: var(--lo-field-border-radius);
+}
+
+button {
+  background: var(--lo-color-primary);
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-radius: var(--lo-field-border-radius);
+  height: var(--lo-grid-2);
+  color: white;
+}

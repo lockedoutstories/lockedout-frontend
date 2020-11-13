@@ -4,14 +4,95 @@
       Locked Out - stories from the disabled and chronic illness communities in
       the midst of Covid-19
     </title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="stylesheet" href="normalize.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=Oswald:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
   <body>
-    <header>
-      <h1>Locked Out</h1>
-      <h2>
-        Stories from the disabled and chronic illness communities in the midst
-        of Covid-19
-      </h2>
-    </header>
+    <div class="body-container">
+      <header>
+        <h1>Locked Out</h1>
+        <p>
+          Stories from the disabled and chronic illness communities in the midst
+          of Covid-19
+        </p>
+      </header>
+      <main>
+        <h2>Share your story</h2>
+        <p>
+          We're looking for people with chronic illness or disabilities who want
+          to open a dialogue, share stories and possibly write about their
+          experiences of life during COVID-19 and lockdowns/restrictions.
+        </p>
+        <p>
+          Based anywhere in the world: we want to hear how life changed for
+          disabled people and the chronically ill during COVID-19. We want to
+          hear those stories that aren’t being told right now
+        </p>
+        <form netlify>
+          <section>
+            <h3>How has life changed for you during COVID-19?</h3>
+            <label for="story">
+              Your story
+              <textarea name="story" id="story" cols="30" rows="10"></textarea>
+            </label>
+          </section>
+          <section>
+            <h3>Your details (optional)</h3>
+            <p>
+              <em
+                >You can choose to leave this entire section blank if you wish
+                to remain anonymous</em
+              >
+            </p>
+            <label for="name">
+              Your name
+              <input type="text" id="name" name="name" />
+            </label>
+            <label for="email">
+              Email (for follow up)
+              <input type="text" id="email" name="email" />
+            </label>
+            <label for="location">
+              Your location
+              <input type="text" id="location" name="location" />
+            </label>
+            <label for="conditions">
+              Conditions (one per line)
+              <textarea
+                name="conditions"
+                id="conditions"
+                cols="30"
+                rows="6"
+              ></textarea>
+            </label>
+            <label for="age">
+              Age
+              <select name="age" id="age">
+                <option value=""></option>
+                <option value="0-9">0-9</option>
+                <option value="10-19">10-19</option>
+                <option value="20-29">20-29</option>
+                <option value="30-39">30-39</option>
+                <option value="40-49">40-49</option>
+                <option value="50-59">50-59</option>
+                <option value="60-69">60-69</option>
+                <option value="70-79">70-79</option>
+                <option value="80+">80+</option>
+              </select>
+            </label>
+          </section>
+          <section>
+            <p>Terms and conditions and privacy policy to come soon.</p>
+            <button type="submit">Share</button>
+          </section>
+        </form>
+      </main>
+    </div>
   </body>
 </html>

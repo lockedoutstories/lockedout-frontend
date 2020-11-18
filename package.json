@@ -1,0 +1,19 @@
+{
+  "name": "lockedout-frontend",
+  "version": "0.0.0",
+  "description": "Locked Out website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lockedoutstories/lockedout-frontend.git"
+  },
+  "author": "Jason O'Neil",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/lockedoutstories/lockedout-frontend/issues"
+  },
+  "homepage": "https://github.com/lockedoutstories/lockedout-frontend#readme"
+}

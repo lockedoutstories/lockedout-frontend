@@ -1,6 +1,6 @@
 import { parse } from "querystring";
 import { APIGatewayProxyHandler } from "aws-lambda";
-import wordpress from "wordpress";
+import WPAPI from "wpapi";
 
 export const handler: APIGatewayProxyHandler = (event, context, callback) => {
   let body: any = {};
@@ -59,29 +59,21 @@ export const handler: APIGatewayProxyHandler = (event, context, callback) => {
 type ExpectedBody = { story: string };
 function submitStory(body: ExpectedBody) {
   // Submit a story
-  const client = wordpress.createClient({
-    url: process.env.WORDPRESS_URL,
+  const client = new WPAPI({
+    endpoint: process.env.WORDPRESS_URL,
     username: process.env.WORDPRESS_USER,
     password: process.env.WORDPRESS_PASSWORD,
   });
 
-  return new Promise((resolve, reject) => {
-    client.newPost(
-      {
-        title: "New draft story submission",
-        status: "draft",
-        content: body.story,
-      },
-      (err, postId) => {
-        if (err) {
-          reject(err);
-        } else {
-          resolve(postId);
-        }
-      }
-    );
-  }).then((postId) => {
-    console.log(`Created draft post ${postId}`);
-    return postId;
-  });
+  return client
+    .posts()
+    .create({
+      title: "New draft story submission",
+      content: body.story,
+      status: "draft",
+    })
+    .then((response) => {
+      console.log(`Created draft post ${response.id}`);
+      return response;
+    });
 }

@@ -1,4 +1,4 @@
-import { parse } from "querystring";
+const { parse } = require("querystring");
 
 exports.handler = (event, context, callback) => {
   let body = {};

@@ -57,7 +57,7 @@ export const handler: APIGatewayProxyHandler = (event, context, callback) => {
 };
 
 type ExpectedBody = { story: string };
-async function submitStory(body: ExpectedBody) {
+function submitStory(body: ExpectedBody) {
   // Submit a story
   const client = wordpress.createClient({
     url: process.env.WORDPRESS_URL,
@@ -65,24 +65,23 @@ async function submitStory(body: ExpectedBody) {
     password: process.env.WORDPRESS_PASSWORD,
   });
 
-  const postId = await new Promise((resolve, reject) => {
+  return new Promise((resolve, reject) => {
     client.newPost(
       {
         title: "New draft story submission",
         status: "draft",
         content: body.story,
       },
-      (err, id: string) => {
+      (err, postId) => {
         if (err) {
           reject(err);
         } else {
-          resolve(id);
+          resolve(postId);
         }
       }
     );
+  }).then((postId) => {
+    console.log(`Created draft post ${postId}`);
+    return postId;
   });
-
-  console.log(`Created draft post ${postId}`);
-
-  return postId;
 }

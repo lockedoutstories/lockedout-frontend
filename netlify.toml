@@ -1,0 +1,5 @@
+[build]
+  # Nothing to build yet
+  command = "ls ."
+  publish = "public"
+  functions = "functions"

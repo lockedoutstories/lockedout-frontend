@@ -19,7 +19,8 @@
   },
   "homepage": "https://github.com/lockedoutstories/lockedout-frontend#readme",
   "dependencies": {
-    "netlify-lambda": "^2.0.1"
+    "netlify-lambda": "^2.0.1",
+    "wordpress": "^1.4.1"
   },
   "devDependencies": {
     "@babel/preset-typescript": "^7.12.1",

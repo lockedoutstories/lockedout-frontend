@@ -1,5 +1,4 @@
 [build]
-  # Nothing to build yet
-  command = "ls ."
+  command = "npm run build"
   publish = "public"
-  functions = "functions"
+  functions = "dist/functions"

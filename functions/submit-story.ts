@@ -1,7 +1,8 @@
-const { parse } = require("querystring");
+import { parse } from "querystring";
+import { APIGatewayProxyHandler } from "aws-lambda";
 
-exports.handler = (event, context, callback) => {
-  let body = {};
+export const handler: APIGatewayProxyHandler = (event, context, callback) => {
+  let body: any = {};
   console.log(event);
   try {
     body = JSON.parse(event.body);

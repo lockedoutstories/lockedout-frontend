@@ -8,10 +8,10 @@ Front End repo.
 
 To set up:
 
-- `yarn install` to install dependencies
+- `npm install` to install dependencies
 - `cp .envrc.example .envrc` then add credentials for accessing wordpress
 
 Running locally:
 
 - Run `source .envrc` to load environment variables. Alternatively, use https://direnv.net/ to load them automaticlaly.
-- Run `yarn dev` to run local development server
+- Run `npm run dev` to run local development server

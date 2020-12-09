@@ -34,7 +34,11 @@
           disabled people and the chronically ill during COVID-19. We want to
           hear those stories that aren’t being told right now
         </p>
-        <form name="User Story Submissions" netlify>
+        <form
+          name="User Story Submissions"
+          method="post"
+          action="/.netlify/functions/submit-story"
+        >
           <section>
             <h3>How has life changed for you during COVID-19?</h3>
             <label for="story">
